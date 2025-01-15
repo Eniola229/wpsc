@@ -166,7 +166,7 @@
                     <script>
                         window.playerConfiguration = {
                             "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945195/Ona_ni_kise_Esin_Apa_kini_vqfkur.wav"},
+                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948743/Ona_ni_kise_Esin_Apa_kini_rxlz6h.mp3"},
                                 "title": "Ona ni kise Esin pa kini"
                             }
                         }
@@ -177,7 +177,7 @@
                     <script>
                         window.playerConfiguration = {
                             "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945104/Arufin_ni_Ogba_Ewon_ye_fun_bwmadi.wav"},
+                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948453/Arufin_ni_Ogba_Ewon_ye_fun_xlpvhi.mp3"},
                                 "title": "Arufin ni Ogba Ewon ye fun"
                             }
                         }
@@ -188,7 +188,7 @@
                     <script>
                         window.playerConfiguration = {
                             "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945080/Blessed_Man_bsmmgi.wav"},
+                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948638/Blessed_Man_jytwdv.mp3"},
                                 "title": "Blessed Man"
                             }
                         }
@@ -199,7 +199,7 @@
                     <script>
                         window.playerConfiguration = {
                             "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945096/IFE.WAV_zn6l8c.wav"},
+                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948222/IFE.WAV_mij1h0.mp3"},
                                 "title": "IFE"
                             }
                         }
