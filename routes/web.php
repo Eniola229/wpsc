@@ -44,6 +44,11 @@ Route::get('/gallery', function () {
     return view('gallary');
 });
 
+Route::get('/sermon-single', function () {
+    return view('sermon-single');
+});
+
+
 //ENROLL STUDENT 
 Route::get('/admission', [EnrollController::class, 'create'])->name('admissions.create');
 Route::post('/admission', [EnrollController::class, 'store'])->name('admissions.store');

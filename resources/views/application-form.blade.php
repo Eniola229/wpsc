@@ -325,20 +325,21 @@
                         <address>HOUSE 25 LASISI DAUDA STR IGANDO LAGOS NIGERIA</address>
                         <ul class="list-unstyled links">
                             <li><a href="tel://11234567890">+234 802 358 8202</a></li>
-                            <li><a href="mailto: Wpsc2004@yahoo.com">Wpsc2004@yahoo.com</a></li>
+                            <li><a href="mailto:wayofpeacesalvationcentreworld@gmail.com">wayofpeacesalvationcentreworld@gmail.com</a></li>
                         </ul>
                     </div> <!-- /.widget -->
                 </div> <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <div class="widget">
-                        <h3>Sources</h3>
+                        <h3>Quick Links</h3>
                         <ul class="list-unstyled float-start links">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Vision</a></li>
-                            <li><a href="#">Mission</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
+                            <li><a href="{{ url('sermons') }}">Sermons</a></li>
+                            <li><a href="{{ url('ministry') }}">Ministries</a></li>
+                            <li><a href="{{ url('events') }}">Events</a></li>
+                            <li><a href="{{ url('/gallery') }}">Gallery</a></li>
+                            <li><a href="{{ url('contact') }}">Contact</a></li>
+                            <li><a href="{{ url('EDBTI') }}">EDBTI</a></li>
+                            <li><a href="{{ url('give') }}">Giving</a></li>
                         </ul>
                         
                     </div> <!-- /.widget -->
@@ -347,14 +348,15 @@
                     <div class="widget">
                         <h3>Links</h3>
                         <ul class="list-unstyled links">
-                            <li><a href="#">Our Vision</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="{{ url('contact') }}">Contact us</a></li>
+                            <li><a href="{{ url('give') }}">Giving</a></li>
                         </ul>
 
                         <ul class="list-unstyled social">
+                            <li><a href="https://youtube.com/@evangelistkayodeemmanuel493?si=qusRkd_rmcKjbJ1k"><span class="icon-youtube"></span></a></li>
                             <li><a href="https://whatsapp.com/channel/0029VaxoYnf1NCrPmtzbyA0M"><span class="icon-whatsapp"></span></a></li>
-                            <li><a href="https://www.facebook.com/groups/241058822767669"><span class="icon-facebook"></span></a></li>
+                            <li><a href="https://whatsapp.com/channel/0029VaVRDIyI1rcfnjgY3R0E"><span class="icon-whatsapp"></span></a></li>
+                            <li><a href="https://www.facebook.com/messageoflife60?mibextid=ZbWKwL"><span class="icon-facebook"></span></a></li>
                         </ul>
                     </div> <!-- /.widget -->
                 </div> <!-- /.col-lg-4 -->

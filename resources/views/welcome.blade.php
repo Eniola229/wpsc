@@ -184,88 +184,113 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945107/Psalm_114._Talo_fe_segun_Aye_p17wpk.aac"},
-                                "title": "Psalm 114. Talo fe segun Aye"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
+    <div class="row justify-content-center mb-4">
+      <!-- Podcast 1 -->
+      <div class="col-lg-6 mb-3">
+        <h5>Psalm 114. Talo fe segun Aye</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945107/Psalm_114._Talo_fe_segun_Aye_p17wpk.aac"},
+              "title": "Psalm 114. Talo fe segun Aye"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-1" class="btn btn-primary w-full" aria-label="Download Psalm 114">Download <i class="fa fa-download"></i></a>
+      </div>
 
-                <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945160/Out_to_be_Inn_dlwvt1.aac"},
-                                "title": "Out to be Inn"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
+      <!-- Podcast 2 -->
+      <div class="col-lg-6 mb-3">
+        <h5>Out to be Inn</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945160/Out_to_be_Inn_dlwvt1.aac"},
+              "title": "Out to be Inn"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-2" class="btn btn-primary w-full" aria-label="Download Out to be Inn">Download <i class="fa fa-download"></i></a>
+      </div>
 
-                <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945168/Isaiah_9-6_yhq9wr.aac"},
-                                "title": "Isaiah 9-6"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
+      <!-- Podcast 3 -->
+      <div class="col-lg-6 mb-3">
+        <h5>Isaiah 9-6</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945168/Isaiah_9-6_yhq9wr.aac"},
+              "title": "Isaiah 9-6"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-3" class="btn btn-primary w-full" aria-label="Download Isaiah 9-6">Download <i class="fa fa-download"></i></a>
+      </div>
 
-                <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948743/Ona_ni_kise_Esin_Apa_kini_rxlz6h.mp3"},
-                                "title": "Ona ni kise Esin pa kini"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
-                                <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948453/Arufin_ni_Ogba_Ewon_ye_fun_xlpvhi.mp3"},
-                                "title": "Arufin ni Ogba Ewon ye fun"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
-                 <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948638/Blessed_Man_jytwdv.mp3"},
-                                "title": "Blessed Man"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
-            <div class="col-lg-6">
-                    <script>
-                        window.playerConfiguration = {
-                            "episode": {
-                                "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948222/IFE.WAV_mij1h0.mp3"},
-                                "title": "IFE"
-                            }
-                        }
-                    </script>
-                    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
-                </div>
-            </div>
+      <!-- Podcast 4 -->
+      <div class="col-lg-6 mb-3">
+        <h5>Ona ni kise Esin pa kini</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948743/Ona_ni_kise_Esin_Apa_kini_rxlz6h.mp3"},
+              "title": "Ona ni kise Esin pa kini"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-4" class="btn btn-primary w-full" aria-label="Download Ona ni kise Esin pa kini">Download <i class="fa fa-download"></i></a>
+      </div>
+
+      <!-- Podcast 5 -->
+      <div class="col-lg-6 mb-3">
+        <h5>Arufin ni Ogba Ewon ye fun</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948453/Arufin_ni_Ogba_Ewon_ye_fun_xlpvhi.mp3"},
+              "title": "Arufin ni Ogba Ewon ye fun"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-5" class="btn btn-primary w-full" aria-label="Download Arufin ni Ogba Ewon ye fun">Download <i class="fa fa-download"></i></a>
+      </div>
+
+      <!-- Podcast 6 -->
+      <div class="col-lg-6 mb-3">
+        <h5>Blessed Man</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948638/Blessed_Man_jytwdv.mp3"},
+              "title": "Blessed Man"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-6" class="btn btn-primary w-full" aria-label="Download Blessed Man">Download <i class="fa fa-download"></i></a>
+      </div>
+
+      <!-- Podcast 7 -->
+      <div class="col-lg-6 mb-3">
+        <h5>IFE</h5>
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948222/IFE.WAV_mij1h0.mp3"},
+              "title": "IFE"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-7" class="btn btn-primary w-full" aria-label="Download IFE">Download <i class="fa fa-download"></i></a>
+      </div>
+    </div>
+  </div>
 
         </div>
     </div>
@@ -608,14 +633,15 @@
                 </div> <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <div class="widget">
-                        <h3>Sources</h3>
+                        <h3>Quick Links</h3>
                         <ul class="list-unstyled float-start links">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Vision</a></li>
-                            <li><a href="#">Mission</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
+                            <li><a href="{{ url('sermons') }}">Sermons</a></li>
+                            <li><a href="{{ url('ministry') }}">Ministries</a></li>
+                            <li><a href="{{ url('events') }}">Events</a></li>
+                            <li><a href="{{ url('/gallery') }}">Gallery</a></li>
+                            <li><a href="{{ url('contact') }}">Contact</a></li>
+                            <li><a href="{{ url('EDBTI') }}">EDBTI</a></li>
+                            <li><a href="{{ url('give') }}">Giving</a></li>
                         </ul>
                         
                     </div> <!-- /.widget -->
@@ -624,14 +650,15 @@
                     <div class="widget">
                         <h3>Links</h3>
                         <ul class="list-unstyled links">
-                            <li><a href="#">Our Vision</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="{{ url('contact') }}">Contact us</a></li>
+                            <li><a href="{{ url('give') }}">Giving</a></li>
                         </ul>
 
                         <ul class="list-unstyled social">
+                            <li><a href="https://youtube.com/@evangelistkayodeemmanuel493?si=qusRkd_rmcKjbJ1k"><span class="icon-youtube"></span></a></li>
                             <li><a href="https://whatsapp.com/channel/0029VaxoYnf1NCrPmtzbyA0M"><span class="icon-whatsapp"></span></a></li>
-                            <li><a href="https://www.facebook.com/groups/241058822767669"><span class="icon-facebook"></span></a></li>
+                            <li><a href="https://whatsapp.com/channel/0029VaVRDIyI1rcfnjgY3R0E"><span class="icon-whatsapp"></span></a></li>
+                            <li><a href="https://www.facebook.com/messageoflife60?mibextid=ZbWKwL"><span class="icon-facebook"></span></a></li>
                         </ul>
                     </div> <!-- /.widget -->
                 </div> <!-- /.col-lg-4 -->
@@ -656,6 +683,60 @@
     </div>
 
 
+  <script>
+    // Array of media sources with download logic
+    const mediaSources = [
+      {
+        id: "download-1",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945107/Psalm_114._Talo_fe_segun_Aye_p17wpk.aac",
+        title: "Psalm 114. Talo fe segun Aye"
+      },
+      {
+        id: "download-2",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945160/Out_to_be_Inn_dlwvt1.aac",
+        title: "Out to be Inn"
+      },
+      {
+        id: "download-3",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945168/Isaiah_9-6_yhq9wr.aac",
+        title: "Isaiah 9-6"
+      },
+      {
+        id: "download-4",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948743/Ona_ni_kise_Esin_Apa_kini_rxlz6h.mp3",
+        title: "Ona ni kise Esin pa kini"
+      },
+      {
+        id: "download-5",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948453/Arufin_ni_Ogba_Ewon_ye_fun_xlpvhi.mp3",
+        title: "Arufin ni Ogba Ewon ye fun"
+      },
+      {
+        id: "download-6",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948638/Blessed_Man_jytwdv.mp3",
+        title: "Blessed Man"
+      },
+      {
+        id: "download-7",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736948222/IFE.WAV_mij1h0.mp3",
+        title: "IFE"
+      }
+    ];
+
+    mediaSources.forEach(media => {
+      const downloadButton = document.getElementById(media.id);
+      const downloadHref = media.url.replace('/upload/', '/upload/fl_attachment/');
+      const downloadFilename = `${media.title}.mp3`;
+
+      downloadButton.addEventListener('click', () => {
+        const a = document.createElement('a');
+        a.href = downloadHref;
+        a.download = downloadFilename;
+        a.click();
+        console.log(`Download triggered for ${media.title}`);
+      });
+    });
+  </script>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>

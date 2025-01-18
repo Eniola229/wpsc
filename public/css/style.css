@@ -1,18 +1,3 @@
-/*
-* Template Name: TheChurch
-* Template Author: Untree.co
-* Template License: https://creativecommons.org/licenses/by/3.0/
-* Author URI: https://untree.co/
-
-* Twitter: https://twitter.com/Untree_co
-* Facebook: https://web.facebook.com/Untree.co/
-*/
-/*!
- * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8636,7 +8621,14 @@ textarea.form-control-lg {
   color: #fff !important;
   font-weight: 700;
   top: 6px;
-  position: relative; }
+  position: relative; 
+}
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .logo img {
+    height: 50px; /* Adjust the height for phone screens */
+  }
+}
   .logo:hover {
     color: rgba(255, 255, 255, 0.85); }
 
