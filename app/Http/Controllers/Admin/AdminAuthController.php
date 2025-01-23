@@ -11,6 +11,7 @@ use Hash;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Student;
+use App\Models\Sermon;
 
 class AdminAuthController extends Controller
 {
@@ -100,8 +101,9 @@ class AdminAuthController extends Controller
     {
         $students = Student::orderBy('created_at', 'desc')->get();
         $studentCount = Student::all()->count();
+        $sermonCount = Sermon::all()->count();
 
-        return view('admin.dashboard', compact("students", "studentCount"));
+        return view('admin.dashboard', compact("students", "studentCount", "sermonCount"));
     }
 
     /**
