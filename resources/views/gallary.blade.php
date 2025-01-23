@@ -127,6 +127,7 @@
                <li class="btn btn-outline-dark active" data-filter="all">All</li>
               <li class="btn btn-outline-dark" data-filter="anniversary">Anniversary</li>
               <li class="btn btn-outline-dark" data-filter="dinner">Couples Dinner</li>
+              <li class="btn btn-outline-dark" data-filter="sunday">Sunday School</li>
             </ul>
          </div>
 
@@ -696,7 +697,75 @@
             </div>
 
          </div>
-         </div>         
+         </div>       
+
+         <div class="col-lg-12 my-2 content-item sunday">
+           <h4>SUNDAY SCHOOL IMAGE GALLERY</h4>
+         <div class="portfolio-item row">
+            <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-13_d0msew.jpg" class="fancylight popup-btn" data-fancybox-group="light"> 
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-13_d0msew.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-21_xv22dw.jpg" class="fancylight popup-btn" data-fancybox-group="light"> 
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-21_xv22dw.jpg" alt="">
+               </a>
+            </div>
+            <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-32_yli7hm.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-32_yli7hm.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407171/photo_2025-01-20_22-05-24_jhm4va.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407171/photo_2025-01-20_22-05-24_jhm4va.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-02_crxsud.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-02_crxsud.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-07_jxrlwy.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-07_jxrlwy.jpg" alt="">
+               </a>
+            </div>
+            <div class="item lap col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-11_izvyl1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-11_izvyl1.jpg" alt="">
+               </a>
+            </div>
+            <div class="item lap col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-11_izvyl1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-11_izvyl1.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-28_yp9hoe.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-28_yp9hoe.jpg" alt="">
+               </a>
+            </div>
+            <div class="item lap col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-04-54_vuqvbm.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-04-54_vuqvbm.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-00_v4irvi.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407170/photo_2025-01-20_22-05-00_v4irvi.jpg" alt="">
+               </a>
+            </div>
+            <div class="item gts col-lg-3 col-md-4 col-6 col-sm">
+               <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407169/photo_2025-01-20_22-05-09_xuiv0q.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+               <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407169/photo_2025-01-20_22-05-09_xuiv0q.jpg" alt="">
+               </a>
+            </div>
+           
+         </div>
+         </div>
+
       </div>
 
    	<div class="section sec-cta bg-secondary">

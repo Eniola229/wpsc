@@ -130,9 +130,64 @@
 			</div>
           <div class="container">
     <div class="row justify-content-center mb-4">
+        @foreach($sermons as $sermon)
+          <div class="col-lg-6 mb-3">
+            <!-- Player Configuration -->
+            <script>
+              window.playerConfiguration = {
+                "episode": {
+                  "media": {"mp3": "{{ $sermon->audio_url }}"},
+                  "title": "{{ $sermon->title }}"
+                }
+              };
+            </script>
+            <script 
+              class="podigee-podcast-player" 
+              src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" 
+              data-configuration="playerConfiguration">
+            </script>
+            
+            <!-- Download Button -->
+            <a href="#" 
+               id="download-{{ $loop->index + 1000 }}" 
+               class="btn btn-primary w-full" 
+               aria-label="Download {{ $sermon->title }}">
+              Download <i class="fa fa-download"></i>
+            </a>
+
+            <!-- Add Dynamic Media to JavaScript -->
+            <script>
+              window.dynamicMediaSources = window.dynamicMediaSources || [];
+              window.dynamicMediaSources.push({
+                id: "download-{{ $loop->index + 1000 }}",
+                url: "{{ $sermon->audio_url }}",
+                title: "{{ $sermon->title }}"
+              });
+            </script>
+          </div>
+        @endforeach
+
+
+
+
+      <!-- Podcast 0 -->
+      <div class="col-lg-6 mb-3">
+      
+        <script>
+          window.playerConfiguration = {
+            "episode": {
+              "media": {"mp3": "https://res.cloudinary.com/dtxifnjiy/video/upload/v1737408067/Rinrin_Ojukan_mp25qf.aac"},
+              "title": "Rinrin Ojukan"
+            }
+          };
+        </script>
+        <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="playerConfiguration"></script>
+        <a href="#" id="download-0" class="btn btn-primary w-full" aria-label="Download Psalm 114">Download <i class="fa fa-download"></i></a>
+      </div>
+
       <!-- Podcast 1 -->
       <div class="col-lg-6 mb-3">
-        <h5>Psalm 114. Talo fe segun Aye</h5>
+      
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -147,7 +202,7 @@
 
       <!-- Podcast 2 -->
       <div class="col-lg-6 mb-3">
-        <h5>Out to be Inn</h5>
+
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -162,7 +217,7 @@
 
       <!-- Podcast 3 -->
       <div class="col-lg-6 mb-3">
-        <h5>Isaiah 9-6</h5>
+       
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -177,7 +232,7 @@
 
       <!-- Podcast 4 -->
       <div class="col-lg-6 mb-3">
-        <h5>Ona ni kise Esin pa kini</h5>
+        
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -192,7 +247,7 @@
 
       <!-- Podcast 5 -->
       <div class="col-lg-6 mb-3">
-        <h5>Arufin ni Ogba Ewon ye fun</h5>
+        
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -207,7 +262,7 @@
 
       <!-- Podcast 6 -->
       <div class="col-lg-6 mb-3">
-        <h5>Blessed Man</h5>
+         
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -222,7 +277,7 @@
 
       <!-- Podcast 7 -->
       <div class="col-lg-6 mb-3">
-        <h5>IFE</h5>
+        
         <script>
           window.playerConfiguration = {
             "episode": {
@@ -539,6 +594,11 @@
     // Array of media sources with download logic
     const mediaSources = [
       {
+        id: "download-0",
+        url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1737408067/Rinrin_Ojukan_mp25qf.aac",
+        title: "Rinrin Ojukan"
+      },
+      {
         id: "download-1",
         url: "https://res.cloudinary.com/dtxifnjiy/video/upload/v1736945107/Psalm_114._Talo_fe_segun_Aye_p17wpk.aac",
         title: "Psalm 114. Talo fe segun Aye"
@@ -575,19 +635,29 @@
       }
     ];
 
-    mediaSources.forEach(media => {
+// Function to handle downloads
+  const handleDownloads = (mediaArray) => {
+    mediaArray.forEach(media => {
       const downloadButton = document.getElementById(media.id);
-      const downloadHref = media.url.replace('/upload/', '/upload/fl_attachment/');
-      const downloadFilename = `${media.title}.mp3`;
+      if (downloadButton) {
+        const downloadHref = media.url.replace('/upload/', '/upload/fl_attachment/');
+        const downloadFilename = `${media.title}.mp3`;
 
-      downloadButton.addEventListener('click', () => {
-        const a = document.createElement('a');
-        a.href = downloadHref;
-        a.download = downloadFilename;
-        a.click();
-        console.log(`Download triggered for ${media.title}`);
-      });
+        downloadButton.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevent default link behavior
+          const a = document.createElement('a');
+          a.href = downloadHref;
+          a.download = downloadFilename;
+          a.click();
+          console.log(`Download triggered for ${media.title}`);
+        });
+      }
     });
+  };
+
+  // Initialize downloads for both hardcoded and dynamic media
+  handleDownloads(mediaSources);
+  handleDownloads(window.dynamicMediaSources || []);
   </script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>

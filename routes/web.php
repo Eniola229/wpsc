@@ -5,15 +5,17 @@ use App\Http\Controllers\Student\EnrollController;
 
 //ADMIN
 use App\Http\Controllers\Admin\AdminAuthController;
- use App\Http\Controllers\Admin\StudentController;
-
+use App\Http\Controllers\Admin\StudentController;
+use App\Http\Controllers\Admin\SermonController;
+use App\Models\Sermon;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/sermons', function () {
-    return view('sermons');
+    $sermons = Sermon::orderBy('created_at', 'desc')->get();
+    return view('sermons', compact('sermons'));
 });
 
 Route::get('/ministry', function () {
@@ -62,7 +64,11 @@ Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('admin-
 
 Route::middleware('auth:admin')->prefix('admin')->group(function () {
  Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin-dashboard');
+ Route::get('/sermons', [SermonController::class, 'index'])->name('admin-sermons');
  Route::get('/admit-student/{id}', [StudentController::class, 'admitStudent'])->name('admit.student');
  Route::get('/view/student/{id}', [StudentController::class, 'viewStudent'])->name('admit.view.student');
+Route::post('/audio/upload', [SermonController::class, 'upload'])->name('audio.upload');
+Route::get('/audio/{id}', [SermonController::class, 'delete'])->name('audio.delete');
+
 
 });
