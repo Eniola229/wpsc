@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Image;
+use Illuminate\View\View;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ImagesController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         return view('admin.images');
     }  
