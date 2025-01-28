@@ -134,6 +134,14 @@
          <div class="col-lg-12 my-2 content-item anniversary">
            <h4>ANNIVERSARY IMAGE GALLERY</h4>
          <div class="portfolio-item row">
+             <!-- Anniversary Images -->
+                @foreach ($Anniversarys as $image)
+                    <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                        <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
+                            <img class="img-fluid" src="{{ $image->url }}" alt="Anniversary Image">
+                        </a>
+                    </div>
+                @endforeach
             <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736639609/2025-01-11_11_36_01_page-0001_eywi7k.jpg" class="fancylight popup-btn" data-fancybox-group="light"> 
                <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736639609/2025-01-11_11_36_01_page-0001_eywi7k.jpg" alt="">
@@ -385,6 +393,14 @@
          <div class="col-lg-12 my-2 content-item dinner">
            <h4>COUPLES DINNER IMAGE GALLERY</h4>
          <div class="portfolio-item row">
+                <!-- Sunday School Images -->
+                @foreach ($Couples as $image)
+                    <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                        <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
+                            <img class="img-fluid" src="{{ $image->url }}" alt="Sunday School Image">
+                        </a>
+                    </div>
+                @endforeach
             <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736931120/WhatsApp_Image_2025-01-15_at_6.56.21_AM_i8f2fy.jpg" class="fancylight popup-btn" data-fancybox-group="light"> 
                <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736931120/WhatsApp_Image_2025-01-15_at_6.56.21_AM_i8f2fy.jpg" alt="">
@@ -702,6 +718,14 @@
          <div class="col-lg-12 my-2 content-item sunday">
            <h4>SUNDAY SCHOOL IMAGE GALLERY</h4>
          <div class="portfolio-item row">
+                <!-- Sunday School Images -->
+                @foreach ($Sundays  as $image)
+                    <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                        <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
+                            <img class="img-fluid" src="{{ $image->url }}" alt="Sunday School Image">
+                        </a>
+                    </div>
+                @endforeach
             <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-13_d0msew.jpg" class="fancylight popup-btn" data-fancybox-group="light"> 
                <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1737407172/photo_2025-01-20_22-05-13_d0msew.jpg" alt="">
