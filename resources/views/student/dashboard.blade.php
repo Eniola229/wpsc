@@ -561,9 +561,11 @@
                     <a href="{{ route('student.result', $res->id) }}" class="btn-view">
                       <i class="fa fa-file-alt"></i> View Result
                     </a>
+                    @if(strtoupper(trim($res->level)) === '200 LEVEL')
                     <a href="{{ route('student.certificate', $res->id) }}" class="btn-cert" target="_blank">
                       <i class="fa fa-certificate"></i> Certificate
                     </a>
+                    @endif
                   </div>
                 </td>
               </tr>
@@ -594,9 +596,11 @@
               <a href="{{ route('student.result', $res->id) }}" class="btn-view">
                 <i class="fa fa-file-alt"></i> View Result
               </a>
+              @if(strtoupper(trim($res->level)) === '200 LEVEL')
               <a href="{{ route('student.certificate', $res->id) }}" class="btn-cert" target="_blank">
                 <i class="fa fa-certificate"></i> Certificate
               </a>
+              @endif
             </div>
           </div>
           @endforeach

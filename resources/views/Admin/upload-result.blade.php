@@ -96,7 +96,11 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Level <span class="text-danger">*</span></label>
-                                        <input type="text" name="level" class="form-control" placeholder="e.g. 100 LEVEL" required>
+                                        <select name="level" class="form-control" required>
+                                            <option value="" disabled selected>-- Select Level --</option>
+                                            <option value="100 LEVEL">100 LEVEL</option>
+                                            <option value="200 LEVEL">200 LEVEL</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">

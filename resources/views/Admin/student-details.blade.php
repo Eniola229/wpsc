@@ -68,16 +68,6 @@
         <div class="alert alert-danger text-white">{{ session('error') }}</div>
       @endif
 
-    @if($errors->any())
-        <div class="alert alert-danger" style="color: white;">
-            <ul class="mb-0">
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
       {{-- Page Header --}}
       <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
@@ -240,9 +230,11 @@
                           <a href="{{ route('student.result', $res->id) }}" target="_blank" class="btn btn-sm btn-outline-success" title="Print Result Sheet">
                             <i class="fa fa-print me-1"></i> Print
                           </a>
+                          @if(strtoupper(trim($res->level)) === '200 LEVEL')
                           <a href="{{ route('student.certificate', $res->id) }}" target="_blank" class="btn btn-sm btn-outline-secondary" title="View Testimonial">
                             <i class="fa fa-certificate me-1"></i> Cert
                           </a>
+                          @endif
                         </td>
                       </tr>
 

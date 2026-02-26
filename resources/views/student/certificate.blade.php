@@ -1,390 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Testimonial - {{ $student->name }}</title>
+    <title>Certificate - {{ $student->name }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
     <style>
         @page { size: A4 portrait; margin: 0; }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Times New Roman', serif; background: #fff; }
 
-        body {
-            font-family: 'Times New Roman', serif;
-            background: #fff;
-        }
-
-        .certificate-page {
+        .cert-page {
             width: 210mm;
             min-height: 297mm;
             margin: 0 auto;
             background: white;
             position: relative;
-            padding: 0;
             overflow: hidden;
         }
 
-        /* ── Side triangle arrows (left & right, pointing inward) ── */
-        /* LEFT side — 3 stacked triangles pointing RIGHT */
-        .side-triangles-left {
+        /* ══ DIAGONAL STRIPE SVG — top-left ══ */
+.stripe-tl svg,
+        .stripe-br svg {
             position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            padding-left: 0;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
         }
-        .side-triangles-right {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+        /* ══ DIAGONAL STRIPE SVG — bottom-right ══ */
+/* ══════════════════════════════
+           GOLD L-BRACKETS
+        ══════════════════════════════ */
+        .bracket-tr {
+            position: absolute; top: 16px; right: 16px;
+            width: 60px; height: 60px;
+            border-top: 4px solid #c8a600;
+            border-right: 4px solid #c8a600;
+            z-index: 4;
         }
-
-        /* ── Corner triangles (4 corners) ── */
-        .corner-tl {
-            position: absolute; top: 0; left: 0;
-            width: 0; height: 0;
-            border-top: 55px solid #8B0000;
-            border-right: 55px solid transparent;
-        }
-        .corner-tr {
-            position: absolute; top: 0; right: 0;
-            width: 0; height: 0;
-            border-top: 55px solid #8B0000;
-            border-left: 55px solid transparent;
-        }
-        .corner-bl {
-            position: absolute; bottom: 0; left: 0;
-            width: 0; height: 0;
-            border-bottom: 55px solid #8B0000;
-            border-right: 55px solid transparent;
-        }
-        .corner-br {
-            position: absolute; bottom: 0; right: 0;
-            width: 0; height: 0;
-            border-bottom: 55px solid #8B0000;
-            border-left: 55px solid transparent;
+        .bracket-bl {
+            position: absolute; bottom: 16px; left: 16px;
+            width: 60px; height: 60px;
+            border-bottom: 4px solid #c8a600;
+            border-left: 4px solid #c8a600;
+            z-index: 4;
         }
 
-        /* ── Side arrow triangles — LEFT pointing right ── */
-        .tri-arrow-left {
-            width: 0; height: 0;
-            border-top: 18px solid transparent;
-            border-bottom: 18px solid transparent;
-            border-left: 28px solid #8B0000;
-        }
-        /* ── Side arrow triangles — RIGHT pointing left ── */
-        .tri-arrow-right {
-            width: 0; height: 0;
-            border-top: 18px solid transparent;
-            border-bottom: 18px solid transparent;
-            border-right: 28px solid #8B0000;
-        }
-
-        /* ── Bottom center triangles ── */
-        .bottom-triangles {
+        /* ══════════════════════════════
+           CONTENT
+        ══════════════════════════════ */
+        .content {
+            position: relative; z-index: 2;
+            padding: 28px 54px 24px;
             text-align: center;
-            margin-top: 18px;
+        }
+
+        /* ══════════════════════════════
+           LOGOS ROW
+           Left:  school card (rectangular, with round logo inside)
+           Right: church logo (natural/rectangular, NOT clipped)
+        ══════════════════════════════ */
+        .logos-row {
             display: flex;
             justify-content: center;
-            gap: 8px;
-        }
-        .tri-down {
-            width: 0; height: 0;
-            border-left: 14px solid transparent;
-            border-right: 14px solid transparent;
-            border-top: 20px solid #8B0000;
-            display: inline-block;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 14px;
         }
 
-        /* ── Main content wrapper ── */
-        .content {
-            padding: 30px 55px 20px;
-            position: relative;
-            z-index: 2;
+        /* LEFT — church logo, natural rectangular shape */
+        .logo-church img {
+            width: 82px;
+            height: 82px;
+            object-fit: contain;
+            display: block;
         }
 
-        /* ── Header ── */
-        .header { text-align: center; margin-bottom: 6px; }
-
-        .school-name-top {
-            font-size: 11.5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #000;
-            line-height: 1.4;
-        }
-        .affiliate-line {
-            font-size: 11px;
-            font-style: italic;
-            color: #c8a600;
-            font-weight: bold;
-            margin: 3px 0;
-        }
-        .wpsc-line {
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #000;
-            letter-spacing: 0.5px;
-        }
-        .email-line {
-            font-size: 10.5px;
-            color: #333;
-            margin-top: 2px;
-        }
-        .doc-title-line {
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #000;
-            margin-top: 4px;
-        }
-
-        /* ── Gold divider lines ── */
-        .gold-thick { border: none; border-top: 3px solid #c8a600; margin: 7px 0 2px; }
-        .gold-thin  { border: none; border-top: 1px solid #c8a600; margin: 2px 0 7px; }
-
-        /* ── Logo ── */
-        .logo-area { text-align: center; margin: 10px 0 8px; }
-        .logo-area img {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            border: 2px solid #8B0000;
-            object-fit: cover;
-        }
-
-        /* ── Body text ── */
-        .body-text {
-            font-size: 13px;
-            line-height: 1.85;
-            color: #000;
-            text-align: justify;
-        }
-        .body-text .line { margin-bottom: 4px; }
-
-        /* ── Course list ── */
-        .course-list {
-            margin: 8px 0 8px 20px;
-            font-size: 13px;
-            line-height: 1.9;
-            columns: 2;
-            column-gap: 30px;
-        }
-        .course-list li {
-            list-style: decimal;
-            break-inside: avoid;
-        }
-        .course-list li .grade {
-            font-weight: bold;
-            margin-left: 12px;
-        }
-
-        /* ── Closing italic ── */
-        .closing-text {
-            font-size: 12.5px;
-            font-style: italic;
-            line-height: 1.7;
-            color: #000;
-            margin-top: 8px;
-            text-align: justify;
-        }
-
-        /* ── Signature area ── */
-        .sig-section { margin-top: 30px; }
-
-        /* Gold lines above signature */
-        .sig-gold-thick { border: none; border-top: 3px solid #c8a600; margin-bottom: 2px; }
-        .sig-gold-thin  { border: none; border-top: 1px solid #c8a600; margin-bottom: 16px; }
-
-        .signature-area {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-        .sign-box { text-align: center; width: 130px; }
-        .sign-line { border-top: 1px solid #000; margin-top: 36px; }
-        .sign-label {
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 4px;
-            letter-spacing: 0.5px;
-            color: #000;
-        }
-
-        .stamp-box { text-align: center; }
-        .stamp-box img {
-            width: 85px;
-            height: 85px;
+        /* RIGHT — church logo, circular */
+        .logo-circle-right img {
+            width: 82px;
+            height: 82px;
             border-radius: 50%;
             border: 2px solid #1a5f1a;
             object-fit: cover;
-        }
-        .stamp-label {
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 5px;
-            letter-spacing: 1px;
-            color: #000;
+            display: block;
         }
 
-        /* ── Rector sign has date above line ── */
-        .rector-box { text-align: center; width: 130px; }
-        .rector-date {
-            font-size: 12px;
-            font-style: italic;
-            text-align: right;
-            margin-bottom: 2px;
-            color: #333;
+        /* ══════════════════════════════
+           SCHOOL NAMES
+        ══════════════════════════════ */
+        .school-main {
+            font-size: 13.5px; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 0.6px;
+            color: #000; line-height: 1.5; margin-bottom: 4px;
         }
-        .rector-line { border-top: 1px solid #000; margin-top: 36px; }
-        .rector-label {
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 4px;
-            letter-spacing: 0.5px;
-            text-align: center;
-            color: #000;
+        .affiliate-line {
+            font-size: 14px; font-weight: bold;
+            color: #c0392b; text-transform: uppercase;
+            letter-spacing: 1px; margin: 5px 0 4px;
+        }
+        .wpsc-line {
+            font-size: 11px; text-transform: uppercase;
+            color: #000; letter-spacing: 0.3px;
+        }
+        .email-line {
+            font-size: 10.5px; color: #000;
+            text-transform: uppercase; margin-top: 2px;
+        }
+
+        /* ── Gold dividers ── */
+        .gd-thick { border: none; border-top: 2.5px solid #c8a600; margin: 10px 0 2px; }
+        .gd-thin  { border: none; border-top: 1px solid #c8a600;   margin: 2px 0 14px; }
+        .rd-thick { border: none; border-top: 2.5px solid #c8a600; margin: 4px 0 2px; }
+        .rd-thin  { border: none; border-top: 1px solid #c8a600;   margin: 2px 0 14px; }
+
+        /* ── Body italic text ── */
+        .certify-intro {
+            font-size: 12.5px; font-style: italic;
+            color: #6b2a2a; margin-bottom: 8px;
+        }
+        .student-info-line {
+            font-size: 13px; font-style: italic; color: #6b2a2a;
+            display: flex; justify-content: center;
+            align-items: baseline; flex-wrap: wrap;
+            gap: 5px; margin-bottom: 6px;
+        }
+        .s-label        { color: #6b2a2a; }
+        .s-name         { font-weight: bold; font-style: italic; font-size: 14.5px; color: #000; text-decoration: underline; text-transform: uppercase; }
+        .s-matric-label { color: #6b2a2a; }
+        .s-matric       { font-weight: bold; color: #000; text-decoration: underline; padding: 0 6px; min-width: 40px; display: inline-block; text-align: center; }
+
+        .having-text {
+            font-size: 12px; font-style: italic;
+            color: #6b2a2a; line-height: 1.75; margin-bottom: 14px;
+        }
+
+        /* ── Cert title ── */
+        .ct-cert    { font-family: 'Cinzel', serif; font-size: 23px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #000; }
+        .ct-in      { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; text-transform: uppercase; color: #000; margin: 3px 0; }
+        .ct-subject { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #000; line-height: 1.4; }
+
+        /* ── Grade / date ── */
+        .grade-line {
+            font-size: 13px; color: #000;
+            margin: 18px 0 5px;
+            display: flex; justify-content: center;
+            align-items: baseline; gap: 6px; flex-wrap: wrap;
+        }
+        .uval { font-weight: bold; color: #8B0000; border-bottom: 1.5px solid #000; padding: 0 10px; display: inline-block; min-width: 80px; text-align: center; }
+
+        .date-line {
+            font-size: 13px; color: #000;
+            margin: 5px 0 22px;
+            display: flex; justify-content: center;
+            align-items: baseline; gap: 5px; flex-wrap: wrap;
+        }
+        .dval { font-weight: bold; border-bottom: 1.5px solid #000; padding: 0 8px; min-width: 42px; text-align: center; display: inline-block; }
+
+        /* ── Registrar — centered ── */
+        .sig-registrar { display: flex; justify-content: center; margin-bottom: 20px; }
+        .sign-center-box { text-align: center; width: 180px; }
+        .dash-sign { font-size: 18px; color: #444; letter-spacing: 3px; padding-bottom: 2px; }
+        .sig-line  { border-top: 1.5px solid #000; margin-top: 8px; }
+        .sig-label { font-size: 10.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        /* ── Bottom: rector left, stamp right ── */
+        .sig-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+
+        .rector-box { text-align: left; }
+        .rector-date { font-style: italic; font-size: 13px; color: #333; margin-bottom: 4px; }
+        .rector-dash { font-size: 18px; color: #444; letter-spacing: 3px; }
+        .rector-sig-line { border-top: 1.5px solid #000; margin-top: 8px; width: 170px; }
+        .rector-label { font-size: 10.5px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        .stamp-placeholder { text-align: center; }
+        .stamp-circle-dash {
+            width: 85px; height: 85px;
+            border-radius: 50%;
+            border: 2px dashed #999;
+            display: flex; align-items: center;
+            justify-content: center;
+            font-size: 10px; color: #999;
+            font-style: italic; text-align: center;
+            line-height: 1.4;
         }
 
         @media print {
             body { background: white; }
-            .certificate-page { margin: 0; width: 100%; min-height: 100vh; }
+            .cert-page { margin: 0; width: 100%; }
         }
     </style>
 </head>
 <body>
+<div class="cert-page">
 
-<div class="certificate-page">
+    {{-- TOP-LEFT diagonal ribbon --}}
+    <svg style="position:absolute;top:0;left:0;z-index:3;" width="230" height="230" viewBox="0 0 230 230" xmlns="http://www.w3.org/2000/svg">
+        <!-- outermost black (corner triangle) -->
+        <polygon points="0,0  180,0  0,180" fill="#111111"/>
+        <!-- red band -->
+        <polygon points="120,0  155,0  0,155  0,120" fill="#9B0000"/>
+        <!-- gold band -->
+        <polygon points="155,0  195,0  0,195  0,155" fill="#D4A017"/>
+        <!-- inner black band -->
+        <polygon points="195,0  230,0  230,5  0,230  0,195" fill="#111111"/>
+    </svg>
 
-    {{-- Corner triangles --}}
-    <div class="corner-tl"></div>
-    <div class="corner-tr"></div>
-    <div class="corner-bl"></div>
-    <div class="corner-br"></div>
+    {{-- BOTTOM-RIGHT diagonal ribbon (mirror) --}}
+    <svg style="position:absolute;bottom:0;right:0;z-index:3;" width="230" height="230" viewBox="0 0 230 230" xmlns="http://www.w3.org/2000/svg">
+        <!-- outermost black -->
+        <polygon points="230,230  50,230  230,50" fill="#111111"/>
+        <!-- red band -->
+        <polygon points="110,230  75,230  230,75  230,110" fill="#9B0000"/>
+        <!-- gold band -->
+        <polygon points="75,230  35,230  230,35  230,75" fill="#D4A017"/>
+        <!-- inner black band -->
+        <polygon points="35,230  0,230  0,225  230,0  230,35" fill="#111111"/>
+    </svg>
 
-    {{-- Left side arrow triangles --}}
-    <div class="side-triangles-left">
-        <div class="tri-arrow-left"></div>
-        <div class="tri-arrow-left"></div>
-        <div class="tri-arrow-left"></div>
-    </div>
-
-    {{-- Right side arrow triangles --}}
-    <div class="side-triangles-right">
-        <div class="tri-arrow-right"></div>
-        <div class="tri-arrow-right"></div>
-        <div class="tri-arrow-right"></div>
-    </div>
+    {{-- Gold brackets --}}
+    <div class="bracket-tr"></div>
+    <div class="bracket-bl"></div>
 
     <div class="content">
 
-        {{-- Header --}}
-        <div class="header">
-            <div class="school-name-top">Emmanuel Discipleship Bible Training Institute (EDBTI) Lagos, NIG</div>
-            <div class="affiliate-line">An affiliate of</div>
-            <div class="wpsc-line">Way of Peace Salvation Centre Worldwide (WPSC) Lagos, NIG</div>
-            <div class="email-line">E-mail: wpsc2004@yahoo.com</div>
-            <div class="doc-title-line">Testimonial</div>
+        {{-- LOGOS --}}
+        <div class="logos-row">
+
+            {{-- LEFT: church logo — natural shape, NOT circular --}}
+            <div class="logo-church">
+                <img src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736464781/WhatsApp_Image_2025-01-09_at_3.59.48_PM_kuxprl.jpg"
+                     alt="Church Logo">
+            </div>
+
+            {{-- RIGHT: church logo — circular --}}
+            <div class="logo-circle-right">
+                <img src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736464781/WhatsApp_Image_2025-01-09_at_3.59.48_PM_kuxprl.jpg"
+                     alt="Church Logo Circle">
+            </div>
+
         </div>
 
-        <hr class="gold-thick">
-        <hr class="gold-thin">
-
-        {{-- Church Logo --}}
-        <div class="logo-area">
-            <img src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736464781/WhatsApp_Image_2025-01-09_at_3.59.48_PM_kuxprl.jpg"
-                 alt="EDBTI Logo">
+        {{-- Names --}}
+        <div class="school-main">
+            Emmanuel Discipleship Bible Training Institute (EDBTI)<br>Lagos NIG.
         </div>
+        <div class="affiliate-line">An Affiliate of</div>
+        <div class="wpsc-line">Way of Peace Salvation Centre Worldwide (WPSC) Lagos NIG.</div>
+        <div class="email-line">E-Mail: WPSC2004@YAHOO.COM</div>
+
+        <hr class="gd-thick"><hr class="gd-thin">
 
         {{-- Body --}}
-        <div class="body-text">
-            <div class="line">This is to certify that</div>
-            <div class="line">
-                Bro/Sis&nbsp; <strong>{{ $student->name }}</strong>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                Matric No&nbsp; <strong>{{ $student->matric_no }}</strong>
+        <div class="certify-intro">This is to certify that</div>
+
+        <div class="student-info-line">
+            <span class="s-label">Bro/Sist</span>
+            <span class="s-name">{{ $student->name }}</span>
+            <span class="s-matric-label">Matric No</span>
+            <span class="s-matric">{{ $student->matric_no }}</span>
+        </div>
+
+        <div class="having-text">
+            having completed the courses of study approved by the Academic Board and passed the<br>
+            prescribed examination, is here by awarded the
+        </div>
+
+        <div class="ct-cert">Certificate</div>
+        <div class="ct-in">in</div>
+        <div class="ct-subject">Evangelism and Bible Knowledge</div>
+
+        <div class="grade-line">
+            With
+            <span class="uval">{{ $result->total_grade }} ({{ $result->total_remark }})</span>
+            under our hands this
+        </div>
+
+        @php $cd = $result->certificate_date ? \Carbon\Carbon::parse($result->certificate_date) : null; @endphp
+        <div class="date-line">
+            <span class="dval">{{ $cd ? strtoupper($cd->format('jS')) : '____' }}</span>
+            day of
+            <span class="dval" style="min-width:80px;">{{ $cd ? strtoupper($cd->format('F')) : '________' }}</span>
+            20<span class="dval">{{ $cd ? $cd->format('y') : '__' }}</span>
+        </div>
+
+        {{-- Registrar — centered --}}
+        <div class="sig-registrar">
+            <div class="sign-center-box">
+                <div class="dash-sign">———</div>
+                <div class="sig-line"></div>
+                <div class="sig-label">Registrar Sign</div>
             </div>
-            <div class="line">
-                of <strong>EMMANUEL DISCIPLESHIP BIBLE TRAINING INSTITUTE, LAGOS.</strong> Has
-                undergone an intensive training and studies in evangelism and bible
-                for a period of <strong>TWO YEARS</strong>
-                @if($result->certificate_date)
-                    from <strong>{{ \Carbon\Carbon::parse($result->certificate_date)->format('jS F, Y') }}</strong>
+        </div>
+
+        <hr class="rd-thick"><hr class="rd-thin">
+
+        {{-- Rector + stamp --}}
+        <div class="sig-bottom">
+            <div class="rector-box">
+                @if($cd)
+                    <div class="rector-date">{{ $cd->format('d-m-y') }}</div>
                 @else
-                    from <strong>_______________</strong> to <strong>_______________</strong>
+                    <div class="rector-date">&nbsp;</div>
                 @endif
-                under the following courses with the grades.
+                <div class="rector-dash">———</div>
+                <div class="rector-sig-line"></div>
+                <div class="rector-label">Rector Sign &amp; Stamp</div>
+            </div>
+
+            <div class="stamp-placeholder">
+                <div class="stamp-circle-dash">Stamp<br>Here</div>
             </div>
         </div>
 
-        {{-- Course list — 2-column --}}
-        <ol class="course-list">
-            @foreach($result->items as $item)
-            <li>{{ $item->course_name }}<span class="grade">{{ $item->grade }}</span></li>
-            @endforeach
-        </ol>
-
-        {{-- Closing --}}
-        <div class="closing-text">
-            On his/her passing the prescribed examination, he/she will be
-            awarded the Evangelism and Bible Knowledge Certificate by
-            Emmanuel Discipleship Bible Training Institute (EDBTI).
-        </div>
-
-        {{-- Signature section --}}
-        <div class="sig-section">
-            <hr class="sig-gold-thick">
-            <hr class="sig-gold-thin">
-
-            <div class="signature-area">
-
-                {{-- Registrar --}}
-                <div class="sign-box">
-                    <div class="sign-line"></div>
-                    <div class="sign-label">School Registrar Sign</div>
-                </div>
-
-                {{-- Stamp --}}
-                <div class="stamp-box">
-                    <img src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736464781/WhatsApp_Image_2025-01-09_at_3.59.48_PM_kuxprl.jpg"
-                         alt="School Stamp">
-                    <div class="stamp-label">School Stamp</div>
-                </div>
-
-                {{-- Rector --}}
-                <div class="rector-box">
-                    @if($result->certificate_date)
-                        <div class="rector-date">{{ \Carbon\Carbon::parse($result->certificate_date)->format('d-m-y') }}</div>
-                    @else
-                        <div class="rector-date">&nbsp;</div>
-                    @endif
-                    <div class="rector-line"></div>
-                    <div class="rector-label">Rector of the<br>Institute Sign</div>
-                </div>
-
-            </div>
-        </div>
-
-        {{-- Bottom 3 triangles --}}
-        <div class="bottom-triangles">
-            <div class="tri-down"></div>
-            <div class="tri-down"></div>
-            <div class="tri-down"></div>
-        </div>
-
-    </div>{{-- /content --}}
+    </div>
 </div>
-
 </body>
 </html>
