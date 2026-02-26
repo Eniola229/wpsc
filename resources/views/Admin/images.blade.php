@@ -44,15 +44,23 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
 
-	    @if(session('message'))
-	        <div class="alert alert-success" style="color: white;">
-	            {{ session('message') }}
-	        </div>
-	    @elseif(session('error'))
-	        <div class="alert alert-danger" style="color: white;">
-	            {{ session('error') }}
-	        </div>
-	    @endif
+    @if(session('message'))
+        <div class="alert alert-success" style="color: white;">
+            {{ session('message') }}
+        </div>
+    @elseif(session('error'))
+        <div class="alert alert-danger" style="color: white;">
+            {{ session('error') }}
+        </div>
+    @elseif($errors->any())
+        <div class="alert alert-danger" style="color: white;">
+            <ul class="mb-0">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
          <div class="row my-4">
         <div class="col-lg-12 col-md-12 mb-md-0 mb-4">
@@ -66,6 +74,7 @@
                     <option value="Anniversary">Anniversary</option>
                     <option value="Sunday School">Sunday School</option>
                     <option value="Couples Dinner">Couples Dinner</option>
+                    <option value="EDBTI">EDBTI</option>
                 </select>
                 <div id="categoryError" class="invalid-feedback" style="display: none;">
                     Please select a category before proceeding.

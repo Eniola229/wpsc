@@ -82,7 +82,7 @@
                 We are here to support you in your spiritual and educational journey.
             </p>
             <p>
-                <a href="https://www.wayofpeace.org" class="btn">Visit Our Website</a>
+                <a href="https://www.wpsc.org.ng" class="btn">Visit Our Website</a>
             </p>
             <p>With regards,<br>The Admission Team</p>
         </div>

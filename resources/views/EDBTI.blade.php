@@ -91,6 +91,7 @@
 						</div>
 						<div class="">
 							<p data-aos="fade-left" data-aos-delay="300"><a href="{{ url('/admission') }}" class="btn btn-primary">Apply Now</a></p>
+							<p data-aos="fade-left" data-aos-delay="300"><a href="{{ url('student/login') }}" class="btn btn-primary">Student Portal</a></p>
 						</div>
 					</div>
 				</div>
@@ -200,7 +201,17 @@
 						</div>
 					</div>
 				</div>
-
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+					<div class="sermon-entry">
+						<a href=""><img src="https://res.cloudinary.com/di2ci6rz8/image/upload/v1772045565/laravel_images/ky6xig743wvlooigplm4.jpg" alt="Image" class="img-fluid mb-3 rounded"></a>
+						<div class="sermon-body">
+							<span class="date">January 2026<span class="mx-2">&bullet;</span> </span>
+							<h3 class="mb-2"><a href="#">Fourth graduating set</a></h3>
+							<p class="mb-5">Fourth graduating set. To graduate in January 2026.</p>
+							<!-- <p><a href="#" class="btn btn-primary btn-sm">Read more</a></p> -->
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

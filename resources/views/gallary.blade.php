@@ -10,10 +10,10 @@
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap5" />
-	    
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,39 +27,48 @@
     <link rel="stylesheet" href="css/glightbox.min.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
     <title>Way of Peace Salvation Centre Worldwide. </title>
 </head>
     <style>
-		.portfolio-menu{
-			text-align:center;
-		}
-		.portfolio-menu ul li{
-			display:inline-block;
-			margin:0;
-			list-style:none;
-			padding:10px 15px;
-			cursor:pointer;
-			-webkit-transition:all 05s ease;
-			-moz-transition:all 05s ease;
-			-ms-transition:all 05s ease;
-			-o-transition:all 05s ease;
-			transition:all .5s ease;
-		}
+      .portfolio-menu{
+         text-align:center;
+      }
+      .portfolio-menu ul li{
+         display:inline-block;
+         margin:0;
+         list-style:none;
+         padding:10px 15px;
+         cursor:pointer;
+         -webkit-transition:all 05s ease;
+         -moz-transition:all 05s ease;
+         -ms-transition:all 05s ease;
+         -o-transition:all 05s ease;
+         transition:all .5s ease;
+      }
 
-		.portfolio-item{
-			/*width:100%;*/
-		}
-		.portfolio-item .item{
-			/*width:303px;*/
-			float:left;
-			margin-bottom:10px;
-		}
+      .portfolio-item{
+         /*width:100%;*/
+      }
+      .portfolio-item .item{
+         /*width:303px;*/
+         float:left;
+         margin-bottom:10px;
+      }
       .hidden {
             display: none;
         }
+        .img-fluid {
+    loading: lazy;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.img-fluid.loaded {
+    opacity: 1;
+}
     </style>
 <body >
 
@@ -100,18 +109,18 @@
     </nav>
 
 
-	<div class="hero page-inner overlay" style="background-image: url('images/landscape-1.jpg'); ">
+   <div class="hero page-inner overlay" style="background-image: url('images/landscape-1.jpg'); ">
 
-		<div class="container">
-			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-9 text-center mt-5">
-					<h1 class="heading" data-aos="fade-up">Gallery</h1>
-				</div>
-			</div>
+      <div class="container">
+         <div class="row justify-content-center align-items-center">
+            <div class="col-lg-9 text-center mt-5">
+               <h1 class="heading" data-aos="fade-up">Gallery</h1>
+            </div>
+         </div>
 
 
-		</div>
-	</div>
+      </div>
+   </div>
 
 
 
@@ -128,6 +137,7 @@
               <li class="btn btn-outline-dark" data-filter="anniversary">Anniversary</li>
               <li class="btn btn-outline-dark" data-filter="dinner">Couples Dinner</li>
               <li class="btn btn-outline-dark" data-filter="sunday">Sunday School</li>
+              <li class="btn btn-outline-dark" data-filter="EDBTI">EDBTI</li>
             </ul>
          </div>
 
@@ -138,10 +148,10 @@
                 @foreach ($Anniversarys as $image)
                     <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                         <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
-                            <img class="img-fluid" src="{{ $image->url }}" alt="Anniversary Image">
+                            <img class="img-fluid" loading="lazy" src="{{ $image->url }}" alt="Anniversary Image">
                         </a>
                     </div>
-                @endforeach
+                @endforeach 
             <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                <a href="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736639609/2025-01-11_11_36_01_page-0001_eywi7k.jpg" class="fancylight popup-btn" data-fancybox-group="light"> 
                <img class="img-fluid" src="https://res.cloudinary.com/dtxifnjiy/image/upload/v1736639609/2025-01-11_11_36_01_page-0001_eywi7k.jpg" alt="">
@@ -397,7 +407,7 @@
                 @foreach ($Couples as $image)
                     <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                         <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
-                            <img class="img-fluid" src="{{ $image->url }}" alt="Sunday School Image">
+                            <img class="img-fluid" loading="lazy" src="{{ $image->url }}" alt="Sunday School Image">
                         </a>
                     </div>
                 @endforeach
@@ -722,7 +732,7 @@
                 @foreach ($Sundays  as $image)
                     <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                         <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
-                            <img class="img-fluid" src="{{ $image->url }}" alt="Sunday School Image">
+                            <img class="img-fluid" loading="lazy" src="{{ $image->url }}" alt="Sunday School Image">
                         </a>
                     </div>
                 @endforeach
@@ -790,21 +800,34 @@
          </div>
          </div>
 
+         <div class="col-lg-12 my-2 content-item EDBTI">
+           <h4>EDBTI IMAGE GALLERY</h4>
+         <div class="portfolio-item row">
+                <!-- Sunday School Images -->
+                @foreach ($EDBTIs as $image)
+                    <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                        <a href="{{ $image->url }}" class="fancylight popup-btn" data-fancybox-group="light">
+                            <img  loading="lazy" class="img-fluid" src="{{ $image->url }}" alt="Sunday School Image">
+                        </a>
+                    </div>
+                @endforeach
+                </div>
+         </div>
       </div>
 
-   	<div class="section sec-cta bg-secondary">
-		<div class="container">
-			<div class="row align-items-center" data-aos="fade-up">
-				<div class="col-lg-9 text-center text-md-start mb-4 mb-md-0">
-					<h2 class="heading text-white">Support our mission by giving towards the spreading of our sermons.</h2>
-				</div>		
-				<div class="col-lg-3 text-center text-md-end" data-aos="fade-up" data-aos-delay="100">
-					<a href="{{ url('give') }}" class="btn btn-primary py-3 px-5">Give Now</a>
-				</div>
+      <div class="section sec-cta bg-secondary">
+      <div class="container">
+         <div class="row align-items-center" data-aos="fade-up">
+            <div class="col-lg-9 text-center text-md-start mb-4 mb-md-0">
+               <h2 class="heading text-white">Support our mission by giving towards the spreading of our sermons.</h2>
+            </div>      
+            <div class="col-lg-3 text-center text-md-end" data-aos="fade-up" data-aos-delay="100">
+               <a href="{{ url('give') }}" class="btn btn-primary py-3 px-5">Give Now</a>
+            </div>
 
-			</div>		
-		</div>		
-	</div>
+         </div>      
+      </div>      
+   </div>
 
     <div class="site-footer bg-white">
         <div class="container">
@@ -862,13 +885,13 @@
     </div> <!-- /.site-footer -->
 
 
-	<!-- Preloader -->
-	<div id="overlayer"></div>
-	<div class="loader">
-		<div class="spinner-border text-primary" role="status">
-			<span class="visually-hidden">Loading...</span>
-		</div>
-	</div>
+   <!-- Preloader -->
+   <div id="overlayer"></div>
+   <div class="loader">
+      <div class="spinner-border text-primary" role="status">
+         <span class="visually-hidden">Loading...</span>
+      </div>
+   </div>
 
     <script>
         // JavaScript to handle filtering
@@ -895,35 +918,60 @@
     </script>
 
 
-	<script type="text/javascript">
+   <script type="text/javascript">
          $('.portfolio-menu ul li').click(function(){
-         	$('.portfolio-menu ul li').removeClass('active');
-         	$(this).addClass('active');
-         	
-         	var selector = $(this).attr('data-filter');
-         	$('.portfolio-item').isotope({
-         		filter:selector
-         	});
-         	return  false;
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+            
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+               filter:selector
+            });
+            return  false;
          });
          $(document).ready(function() {
          var popup_btn = $('.popup-btn');
          popup_btn.magnificPopup({
          type : 'image',
          gallery : {
-         	enabled : true
+            enabled : true
          }
          });
          });
-	</script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/tiny-slider.js"></script>
-	<script src="js/glightbox.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/navbar.js"></script>
-	<script src="js/counter.js"></script>
-	<script src="js/custom.js"></script>
+   </script>
+   <script>
+    // Lazy load with fade-in effect
+    const lazyImages = document.querySelectorAll('img.img-fluid');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+                // If already cached/loaded
+                if (img.complete) {
+                    img.classList.add('loaded');
+                }
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '100px 0px', // Start loading 100px before entering viewport
+        threshold: 0.01
+    });
 
-	
+    lazyImages.forEach(img => imageObserver.observe(img));
+</script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/tiny-slider.js"></script>
+   <script src="js/glightbox.min.js"></script>
+   <script src="js/aos.js"></script>
+   <script src="js/navbar.js"></script>
+   <script src="js/counter.js"></script>
+   <script src="js/custom.js"></script>
+
+   
 </body>
 </html>
